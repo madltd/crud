@@ -1,7 +1,7 @@
 {
-  "name": "@mfc/crud-mongoose",
+  "name": "@mfcsafe/crud-mongoose",
   "description": "NestJs CRUD for RESTful APIs - Mongoose",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "license": "MIT",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
@@ -13,10 +13,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mfc/crud.git"
+    "url": "git+https://github.com/mfcsafe/crud.git"
   },
   "bugs": {
-    "url": "https://github.com/mfc/crud/issues"
+    "url": "https://github.com/mfcsafe/crud/issues"
   },
   "keywords": [
     "typescript",
@@ -39,14 +39,14 @@
   "scripts": {
     "build": "npx tsc -b"
   },
-  "homepage": "https://github.com/mfc/crud#readme",
+  "homepage": "https://github.com/mfcsafe/crud#readme",
   "directories": {
     "lib": "lib",
     "test": "test"
   },
   "peerDependencies": {
-    "@mfc/crud": "^4.3.3",
-    "@mfc/crud-request": "^4.3.3"
+    "@mfcsafe/crud": "^4.3.3",
+    "@mfcsafe/crud-request": "^4.3.3"
   },
   "gitHead": "ac0f9df961764a95cf2bfc7c5335056d8bfcd426"
 }

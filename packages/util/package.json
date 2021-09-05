@@ -1,7 +1,7 @@
 {
-  "name": "@mfc/util",
+  "name": "@mfcsafe/util",
   "description": "NestJs CRUD for RESTful APIs - util",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "license": "MIT",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
@@ -13,10 +13,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/mfc/crud.git"
+    "url": "https://github.com/mfcsafe/crud.git"
   },
   "bugs": {
-    "url": "https://github.com/mfc/crud/issues"
+    "url": "https://github.com/mfcsafe/crud/issues"
   },
   "keywords": [
     "typescript",
