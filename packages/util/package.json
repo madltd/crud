@@ -1,7 +1,7 @@
 {
   "name": "@mfcsafe/util",
   "description": "NestJs CRUD for RESTful APIs - util",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "license": "MIT",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
@@ -36,5 +36,5 @@
   "scripts": {
     "build": "npx tsc -b"
   },
-  "gitHead": "ac0f9df961764a95cf2bfc7c5335056d8bfcd426"
+  "gitHead": "67f9ea94525941bbaf521f0f21f5550205ea3e23"
 }
