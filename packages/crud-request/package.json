@@ -1,7 +1,7 @@
 {
   "name": "@mfc/crud-request",
   "description": "NestJs CRUD for RESTful APIs - request query builder",
-  "version": "4.6.5",
+  "version": "0.0.1",
   "license": "MIT",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
@@ -47,8 +47,8 @@
     "build": "npx tsc -b"
   },
   "dependencies": {
-    "@mfc/util": "^4.6.5",
+    "@mfc/util": "^0.0.1",
     "qs": "^6.8.0"
   },
-  "gitHead": "420c2291ceb7912e1d6f023ef8e4fc3cffc48d3e"
+  "gitHead": "9c24c9b6aef663df494800296f5010ce37a11309"
 }
