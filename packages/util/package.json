@@ -1,7 +1,7 @@
 {
   "name": "@mfc/util",
   "description": "NestJs CRUD for RESTful APIs - util",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "license": "MIT",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
