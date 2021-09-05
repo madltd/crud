@@ -14,8 +14,8 @@ import {
   RequestQueryException,
   RequestQueryParser,
   SCondition,
-} from '@nestjsx/crud-request';
-import { hasLength, isArrayFull, isFunction, isNil, isObjectFull } from '@nestjsx/util';
+} from '@mfc/crud-request';
+import { hasLength, isArrayFull, isFunction, isNil, isObjectFull } from '@mfc/util';
 
 import { PARSED_CRUD_REQUEST_KEY } from '../constants';
 import { CrudActions } from '../enums';

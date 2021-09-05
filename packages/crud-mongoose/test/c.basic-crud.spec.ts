@@ -2,8 +2,8 @@ import { BadRequestException, Controller, INestApplication } from '@nestjs/commo
 import { MongooseModule } from '@nestjs/mongoose';
 import { Test } from '@nestjs/testing';
 
-import { Crud } from '@nestjsx/crud';
-import { RequestQueryBuilder } from '@nestjsx/crud-request';
+import { Crud } from '@mfc/crud';
+import { RequestQueryBuilder } from '@mfc/crud-request';
 import { Exclude } from 'class-transformer';
 import { Model } from 'mongoose';
 import * as request from 'supertest';

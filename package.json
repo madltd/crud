@@ -1,5 +1,5 @@
 {
-  "name": "@nestjsx/crud",
+  "name": "@mfc/crud",
   "version": "1.0.1",
   "description": "Nest CRUD for RESTful APIs",
   "license": "MIT",
@@ -51,7 +51,7 @@
   },
   "collective": {
     "type": "opencollective",
-    "url": "https://opencollective.com/nestjsx",
+    "url": "https://opencollective.com/mfc",
     "donation": {
       "text": "Become a partner:"
     }

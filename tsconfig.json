@@ -15,14 +15,14 @@
     "composite": true,
     "baseUrl": "./packages",
     "paths": {
-      "@nestjsx/crud": ["crud/src"],
-      "@nestjsx/crud-request": ["crud-request/src"],
-      "@nestjsx/crud-mongoose": ["crud-mongoose/src"],
-      "@nestjsx/util": ["util/src"],
-      "@nestjsx/crud/*": ["crud/src/*"],
-      "@nestjsx/crud-request/*": ["crud-request/src/*"],
-      "@nestjsx/util/*": ["util/src/*"],
-      "@nestjsx/crud-mongoose/*": ["crud-mongoose/src/*"]
+      "@mfc/crud": ["crud/src"],
+      "@mfc/crud-request": ["crud-request/src"],
+      "@mfc/crud-mongoose": ["crud-mongoose/src"],
+      "@mfc/util": ["util/src"],
+      "@mfc/crud/*": ["crud/src/*"],
+      "@mfc/crud-request/*": ["crud-request/src/*"],
+      "@mfc/util/*": ["util/src/*"],
+      "@mfc/crud-mongoose/*": ["crud-mongoose/src/*"]
     }
   },
   "references": [

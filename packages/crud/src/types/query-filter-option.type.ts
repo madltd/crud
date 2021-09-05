@@ -1,7 +1,7 @@
 import {
   QueryFilter,
   SCondition,
-} from '@nestjsx/crud-request/types/request-query.types';
+} from '@mfc/crud-request/types/request-query.types';
 
 export type QueryFilterFunction = (
   search?: SCondition,

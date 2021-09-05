@@ -6,14 +6,14 @@ import {
     GetManyDefaultResponse,
     JoinOptions,
     QueryOptions,
-} from '@nestjsx/crud';
+} from '@mfc/crud';
 import {
     ParsedRequestParams,
     QueryFields,
     QueryFilter,
     QueryJoin,
     QuerySort,
-} from '@nestjsx/crud-request';
+} from '@mfc/crud-request';
 import {
     DeepPartial,
     hasLength,
@@ -24,7 +24,7 @@ import {
     isUndefined,
     ObjectLiteral,
     objKeys,
-} from '@nestjsx/util';
+} from '@mfc/util';
 import { ObjectId } from 'mongodb';
 import { Document, Query, Model, Schema, Types, EnforceDocument, FilterQuery } from 'mongoose';
 

@@ -1,5 +1,5 @@
-import { SCondition } from '@nestjsx/crud-request/types/request-query.types';
-import { ObjectLiteral } from '@nestjsx/util';
+import { SCondition } from '@mfc/crud-request/types/request-query.types';
+import { ObjectLiteral } from '@mfc/util';
 
 export interface AuthGlobalOptions {
   property?: string;

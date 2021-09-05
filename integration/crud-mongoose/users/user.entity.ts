@@ -1,4 +1,4 @@
-import { CrudValidationGroups } from '@nestjsx/crud';
+import { CrudValidationGroups } from '@mfc/crud';
 import { IsOptional, IsString } from 'class-validator';
 
 import { BaseEntity } from '../base-entity';
