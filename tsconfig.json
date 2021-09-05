@@ -18,13 +18,13 @@
       "@nestjsx/crud": ["crud/src"],
       "@nestjsx/crud-typeorm": ["crud-typeorm/src"],
       "@nestjsx/crud-request": ["crud-request/src"],
-      "nest-crud-mongoose": ["crud-mongoose/src"],
+      "@nestjsx/crud-mongoose": ["crud-mongoose/src"],
       "@nestjsx/util": ["util/src"],
       "@nestjsx/crud/*": ["crud/src/*"],
       "@nestjsx/crud-typeorm/*": ["crud-typeorm/src/*"],
       "@nestjsx/crud-request/*": ["crud-request/src/*"],
       "@nestjsx/util/*": ["util/src/*"],
-      "nest-crud-mongoose/*": ["crud-mongoose/src/*"]
+      "@nestjsx/crud-mongoose/*": ["crud-mongoose/src/*"]
     }
   },
   "references": [

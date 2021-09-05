@@ -1,5 +1,6 @@
 import { CrudValidationGroups } from '@nestjsx/crud';
 import { IsOptional, IsString } from 'class-validator';
+
 import { BaseEntity } from '../base-entity';
 
 const { CREATE, UPDATE } = CrudValidationGroups;
