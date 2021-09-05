@@ -1,7 +1,7 @@
 import { Controller, INestApplication } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 import { Test } from '@nestjs/testing';
-import { OPERATOR_MAP, RequestQueryBuilder } from '@mfc/crud-request';
+import { OPERATOR_MAP, RequestQueryBuilder } from '@mfcsafe/crud-request';
 import 'jest-extended';
 import { Model } from 'mongoose';
 import * as request from 'supertest';

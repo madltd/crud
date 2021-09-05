@@ -1,7 +1,7 @@
 import {
   QueryFields,
   QuerySort,
-} from '@mfc/crud-request/types/request-query.types';
+} from '@mfcsafe/crud-request/types/request-query.types';
 
 import { QueryFilterOption } from '../types';
 

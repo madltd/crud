@@ -35,7 +35,7 @@ const conf: CrudGlobalConfig = {
 };
 
 // Important: load config before (!!!) you import AppModule
-// https://github.com/mfc/crud/wiki/Controllers#global-options
+// https://github.com/mfcsafe/crud/wiki/Controllers#global-options
 CrudConfigService.load(conf);
 
 import { Crud } from '../src/decorators/crud.decorator';

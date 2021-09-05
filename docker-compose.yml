@@ -1,7 +1,7 @@
 version: '3'
 
 networks:
-  mfc_crud:
+  mfcsafe_crud:
 
 services:
   postgres:
@@ -12,19 +12,19 @@ services:
     environment:
       POSTGRES_USER: root
       POSTGRES_PASSWORD: root
-      POSTGRES_DB: mfc_crud
+      POSTGRES_DB: mfcsafe_crud
     networks:
-      - mfc_crud
+      - mfcsafe_crud
 
   mysql:
     image: mysql:5.7
     ports:
       - 3316:3306
     environment:
-      MYSQL_DATABASE: mfc_crud
-      MYSQL_USER: mfc_crud
-      MYSQL_PASSWORD: mfc_crud
-      MYSQL_ROOT_PASSWORD: mfc_crud
+      MYSQL_DATABASE: mfcsafe_crud
+      MYSQL_USER: mfcsafe_crud
+      MYSQL_PASSWORD: mfcsafe_crud
+      MYSQL_ROOT_PASSWORD: mfcsafe_crud
 
   redis:
     image: redis:alpine
@@ -32,11 +32,11 @@ services:
       - 6399:6379
     command: redis-server
     networks:
-      - mfc_crud
+      - mfcsafe_crud
 
   mongo:
     image: mongo
     ports:
       - 27017:27017
     networks:
-      - mfc_crud
+      - mfcsafe_crud

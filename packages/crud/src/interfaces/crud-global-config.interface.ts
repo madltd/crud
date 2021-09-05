@@ -1,4 +1,4 @@
-import { RequestQueryBuilderOptions } from '@mfc/crud-request';
+import { RequestQueryBuilderOptions } from '@mfcsafe/crud-request';
 
 import { RoutesOptions } from './routes-options.interface';
 import { ParamsOptions } from './params-options.interface';

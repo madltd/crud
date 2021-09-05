@@ -1,13 +1,13 @@
 import { ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
-import { CrudConfigService } from '@mfc/crud';
+import { CrudConfigService } from '@mfcsafe/crud';
 import { HttpExceptionFilter } from '../shared/https-exception.filter';
 import { AppModule } from './app.module';
 import { USER_REQUEST_KEY } from './constants';
 
 // Important: load config before (!!!) you import AppModule
-// https://github.com/mfc/crud/wiki/Controllers#global-options
+// https://github.com/mfcsafe/crud/wiki/Controllers#global-options
 CrudConfigService.load({
   auth: {
     property: USER_REQUEST_KEY,
@@ -24,8 +24,8 @@ async function bootstrap() {
   app.useGlobalFilters(new HttpExceptionFilter());
 
   const options = new DocumentBuilder()
-    .setTitle('@mfc/crud-typeorm')
-    .setDescription('@mfc/crud-typeorm')
+    .setTitle('@mfcsafe/crud-typeorm')
+    .setDescription('@mfcsafe/crud-typeorm')
     .setVersion('1.0')
     .build();
   const document = SwaggerModule.createDocument(app, options);

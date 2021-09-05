@@ -7,7 +7,7 @@ import {
   isNumber,
   isNil,
   objKeys,
-} from '@mfc/util';
+} from '@mfcsafe/util';
 
 import { RequestQueryException } from './exceptions';
 import { ParamsOptions, ParamOption } from './interfaces';

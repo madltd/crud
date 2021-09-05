@@ -1,4 +1,4 @@
-import { OperatorMap } from '@mfc/crud-request';
+import { OperatorMap } from '@mfcsafe/crud-request';
 
 export const MONGOOSE_OPERATOR_MAP: OperatorMap = {
   $eq: (value) => [

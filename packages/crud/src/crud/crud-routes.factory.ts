@@ -11,7 +11,7 @@ import {
   getOwnPropNames,
   isNil,
   isUndefined,
-} from '@mfc/util';
+} from '@mfcsafe/util';
 import * as deepmerge from 'deepmerge';
 
 import { R } from './reflection.helper';

@@ -1,4 +1,4 @@
-import { CrudValidationGroups } from '@mfc/crud';
+import { CrudValidationGroups } from '@mfcsafe/crud';
 import { IsOptional, IsString } from 'class-validator';
 
 import { BaseEntity } from '../base-entity';

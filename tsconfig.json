@@ -15,20 +15,20 @@
     "composite": true,
     "baseUrl": "./packages",
     "paths": {
-      "@mfc/crud": ["crud/src"],
-      "@mfc/crud-request": ["crud-request/src"],
-      "@mfc/crud-mongoose": ["crud-mongoose/src"],
-      "@mfc/util": ["util/src"],
-      "@mfc/crud/*": ["crud/src/*"],
-      "@mfc/crud-request/*": ["crud-request/src/*"],
-      "@mfc/util/*": ["util/src/*"],
-      "@mfc/crud-mongoose/*": ["crud-mongoose/src/*"]
+      "@mfcsafe/crud": ["crud/src"],
+      "@mfcsafe/crud-request": ["crud-request/src"],
+      "@mfcsafe/crud-mongoose": ["crud-mongoose/src"],
+      "@mfcsafe/util": ["util/src"],
+      "@mfcsafe/crud/*": ["crud/src/*"],
+      "@mfcsafe/crud-request/*": ["crud-request/src/*"],
+      "@mfcsafe/util/*": ["util/src/*"],
+      "@mfcsafe/crud-mongoose/*": ["crud-mongoose/src/*"]
     }
   },
   "references": [
-    { "path": "packages/crud" },
-    { "path": "packages/crud-request" },
-    { "path": "packages/crud-mongoose" },
-    { "path": "packages/util" }
+    { "path": "crud" },
+    { "path": "crud-request" },
+    { "path": "crud-mongoose" },
+    { "path": "util" }
   ]
 }

@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
-import { MongooseCrudService } from '@mfc/crud-mongoose';
+import { MongooseCrudService } from '@mfcsafe/crud-mongoose';
 import { Model } from 'mongoose';
 import { CommentDocument } from './comment.document';
 

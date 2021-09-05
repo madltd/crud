@@ -1,4 +1,4 @@
-import { ParsedRequestParams } from '@mfc/crud-request';
+import { ParsedRequestParams } from '@mfcsafe/crud-request';
 
 import { CrudRequestOptions } from '../interfaces';
 
