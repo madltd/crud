@@ -1,7 +1,7 @@
 import { Controller, INestApplication } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 import { Test } from '@nestjs/testing';
-import { RequestQueryBuilder } from '@nestjsx/crud-request';
+import { OPERATOR_MAP, RequestQueryBuilder } from '@nestjsx/crud-request';
 import 'jest-extended';
 import { Model } from 'mongoose';
 import * as request from 'supertest';
@@ -15,6 +15,7 @@ import {
   MONGO_URI,
 } from '../../../integration/crud-mongoose/mongoose.config';
 import {
+  Post,
   PostDocument,
   postSchema,
   PostsService,
@@ -28,10 +29,11 @@ import { User } from '../../../integration/crud-mongoose/users';
 import { UserDocument } from '../../../integration/crud-mongoose/users/user.document';
 import { userSchema } from '../../../integration/crud-mongoose/users/user.schema';
 import { Crud } from '../../crud/src/decorators';
+import { MONGOOSE_OPERATOR_MAP } from '../lib';
 import { UsersService } from './__fixture__/users.service';
 
 // tslint:disable:max-classes-per-file
-describe('#crud-typeorm', () => {
+describe('#crud-mongoose', () => {
   describe('#query params', () => {
     let app: INestApplication;
     let server: any;
@@ -81,7 +83,15 @@ describe('#crud-typeorm', () => {
           ]),
         ],
         controllers: [UsersController],
-        providers: [UsersService, PostsService, CommentsService],
+        providers: [
+          UsersService,
+          PostsService,
+          CommentsService,
+          {
+            provide: OPERATOR_MAP,
+            useValue: MONGOOSE_OPERATOR_MAP,
+          },
+        ],
       }).compile();
 
       app = fixture.createNestApplication();
@@ -125,21 +135,98 @@ describe('#crud-typeorm', () => {
     //   });
     // });
     //
-    // describe('#query filter', () => {
-    //   it('should return data with limit', (done) => {
-    //     const query = qb.setLimit(4).query();
-    //     return request(server)
-    //       .get('/companies')
-    //       .query(query)
-    //       .end((_, res) => {
-    //         expect(res.status).toBe(200);
-    //         expect(res.body.length).toBe(4);
-    //         res.body.forEach((e: Company) => {
-    //           expect(e.id).not.toBe(1);
-    //         });
-    //         done();
-    //       });
-    //   });
+    describe('#query filter', () => {
+      it('should return one post', (done) => {
+        const query = qb
+          .setFilter({ field: 'name', operator: '$eq', value: 'john2' })
+          .query();
+        return request(server)
+          .get('/users')
+          .query(query)
+          .end((_, res) => {
+            expect(res.status).toBe(200);
+            expect(res.body.length).toBe(1);
+            done();
+          });
+      });
+
+      it("should return all ceo's 40 and older OR cfo's less than 25", (done) => {
+        const query = qb
+          .setFilter({ field: 'title', operator: '$eq', value: 'ceo' })
+          .setFilter({ field: 'age', operator: '$gte', value: 40 })
+          .setOr({ field: 'title', operator: '$eq', value: 'coo' })
+          .setOr({ field: 'age', operator: '$lt', value: 25 })
+          .query();
+        return request(server)
+          .get('/users')
+          .query(query)
+          .end((_, res) => {
+            expect(res.status).toBe(200);
+            expect(res.body.length).toBe(4);
+            done();
+          });
+      });
+
+      it("should return all ceo's and coo's - filter and or", (done) => {
+        const query = qb
+          .setFilter({ field: 'title', operator: '$eq', value: 'ceo' })
+          .setOr({ field: 'title', operator: '$eq', value: 'coo' })
+          .query();
+        return request(server)
+          .get('/users')
+          .query(query)
+          .end((_, res) => {
+            expect(res.status).toBe(200);
+            expect(res.body.length).toBe(6);
+            done();
+          });
+      });
+
+      it("should return all ceo's and coo's - or and or", (done) => {
+        const query = qb
+          .setOr({ field: 'title', operator: '$eq', value: 'ceo' })
+          .setOr({ field: 'title', operator: '$eq', value: 'coo' })
+          .query();
+        return request(server)
+          .get('/users')
+          .query(query)
+          .end((_, res) => {
+            expect(res.status).toBe(200);
+            expect(res.body.length).toBe(6);
+            done();
+          });
+      });
+
+      it("should return all ceo's", (done) => {
+        const query = qb.setOr({ field: 'title', operator: '$eq', value: 'ceo' }).query();
+        return request(server)
+          .get('/users')
+          .query(query)
+          .end((_, res) => {
+            expect(res.status).toBe(200);
+            expect(res.body.length).toBe(4);
+            done();
+          });
+      });
+
+      it("should return all ceo's older than 40", (done) => {
+        const query = qb
+          .setFilter({ field: 'title', operator: '$eq', value: 'ceo' })
+          .setFilter({ field: 'age', operator: '$gt', value: 40 })
+          .sortBy({ field: 'age', order: 'ASC' })
+          .query();
+        return request(server)
+          .get('/users')
+          .query(query)
+          .end((_, res) => {
+            expect(res.status).toBe(200);
+            expect(res.body.length).toBe(2);
+            expect(res.body[0].name).toBe('jim');
+            expect(res.body[1].name).toBe('jim2');
+            done();
+          });
+      });
+    });
     //   it('should return with maxLimit', (done) => {
     //     const query = qb.setLimit(7).query();
     //     return request(server)

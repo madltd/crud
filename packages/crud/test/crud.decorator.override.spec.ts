@@ -18,8 +18,19 @@ describe('#crud', () => {
     let server: any;
     let qb: RequestQueryBuilder;
 
+    enum Field {
+      ONE = 'one',
+    }
+
     @Crud({
       model: { type: TestModel },
+      params: {
+        enumField: {
+          field: 'enum_field',
+          type: 'string',
+          enum: Field,
+        },
+      },
     })
     @Controller('test')
     class TestController implements CrudController<TestModel> {
@@ -79,9 +90,9 @@ describe('#crud', () => {
         return request(server)
           .get('/test')
           .query(query)
-          .expect(500)
           .end((_, res) => {
             const expected = { statusCode: 400, message: 'Invalid filter value' };
+            expect(res.status).toEqual(400);
             expect(res.body).toMatchObject(expected);
             done();
           });
@@ -99,6 +110,10 @@ describe('#crud', () => {
         const params = Swagger.getParams(TestController.prototype.getMany);
         expect(Array.isArray(params)).toBe(true);
         expect(params.length > 0).toBe(true);
+
+        const enumParam = params.find((param) => param.name === 'enumField');
+        expect(enumParam).toBeDefined();
+        expect(enumParam.enum).toEqual(['one']);
       });
       it('should return swagger response ok', () => {
         const response = Swagger.getResponseOk(TestController.prototype.getMany);
@@ -124,9 +139,8 @@ describe('#crud', () => {
         return request(server)
           .post('/test/bulk')
           .send(send)
-          .expect(400)
           .end((_, res) => {
-            expect(res.body.message[0].property).toBe('bulk');
+            expect(res.status).toEqual(400);
             done();
           });
       });

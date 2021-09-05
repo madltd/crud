@@ -1,45 +1,74 @@
 import {
+  BadRequestException,
   CallHandler,
   ExecutionContext,
+  Inject,
   Injectable,
   NestInterceptor,
+  Optional,
 } from '@nestjs/common';
-import { RequestQueryParser, SCondition, QueryFilter } from '@nestjsx/crud-request';
-import { isNil, isFunction, isArrayFull, hasLength } from '@nestjsx/util';
+import {
+  OPERATOR_MAP,
+  OperatorMap,
+  QueryFilter,
+  RequestQueryException,
+  RequestQueryParser,
+  SCondition,
+} from '@nestjsx/crud-request';
+import { hasLength, isArrayFull, isFunction, isNil, isObjectFull } from '@nestjsx/util';
 
 import { PARSED_CRUD_REQUEST_KEY } from '../constants';
 import { CrudActions } from '../enums';
-import { MergedCrudOptions, CrudRequest } from '../interfaces';
+import { CrudRequest, MergedCrudOptions } from '../interfaces';
 import { QueryFilterFunction } from '../types';
 import { CrudBaseInterceptor } from './crud-base.interceptor';
 
 @Injectable()
 export class CrudRequestInterceptor extends CrudBaseInterceptor
   implements NestInterceptor {
+  constructor(@Optional() @Inject(OPERATOR_MAP) private operatorMap: OperatorMap) {
+    super();
+  }
+
   intercept(context: ExecutionContext, next: CallHandler) {
     const req = context.switchToHttp().getRequest();
 
-    /* istanbul ignore else */
-    if (!req[PARSED_CRUD_REQUEST_KEY]) {
-      const { ctrlOptions, crudOptions, action } = this.getCrudInfo(context);
-      const parser = RequestQueryParser.create();
+    try {
+      /* istanbul ignore else */
+      if (!req[PARSED_CRUD_REQUEST_KEY]) {
+        const { ctrlOptions, crudOptions, action } = this.getCrudInfo(context);
+        const parser = RequestQueryParser.create(this.operatorMap);
 
-      parser.parseQuery(req.query);
+        parser.parseQuery(req.query);
 
-      if (!isNil(ctrlOptions)) {
-        const search = this.getSearch(parser, crudOptions, action, req.params);
-        const auth = this.getAuth(parser, crudOptions, req);
-        parser.search = auth.or
-          ? { $or: [auth.or, { $and: search }] }
-          : { $and: [auth.filter, ...search] };
-      } else {
-        parser.search = { $and: this.getSearch(parser, crudOptions, action) };
+        if (!isNil(ctrlOptions)) {
+          const search = this.getSearch(parser, crudOptions, action, req.params);
+          const auth = this.getAuth(parser, crudOptions, req);
+          parser.search = auth.or
+            ? {
+                $or: [auth.or, { $and: search }].filter(
+                  (filter) => !!filter && isObjectFull(filter),
+                ),
+              }
+            : {
+                $and: [auth.filter, ...search].filter(
+                  (filter) => !!filter && isObjectFull(filter),
+                ),
+              };
+        } else {
+          parser.search = { $and: this.getSearch(parser, crudOptions, action) };
+        }
+
+        req[PARSED_CRUD_REQUEST_KEY] = this.getCrudRequest(parser, crudOptions);
       }
 
-      req[PARSED_CRUD_REQUEST_KEY] = this.getCrudRequest(parser, crudOptions);
+      return next.handle();
+    } catch (error) {
+      /* istanbul ignore next */
+      throw error instanceof RequestQueryException
+        ? new BadRequestException(error.message)
+        : error;
     }
-
-    return next.handle();
   }
 
   getCrudRequest(
