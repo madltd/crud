@@ -28,10 +28,10 @@
     }
   },
   "references": [
-    { "path": "packages/crud" },
-    { "path": "packages/crud-typeorm" },
-    { "path": "packages/crud-request" },
-    { "path": "packages/crud-mongoose" },
-    { "path": "packages/util" }
+    { "path": "crud" },
+    { "path": "crud-typeorm" },
+    { "path": "crud-request" },
+    { "path": "crud-mongoose" },
+    { "path": "util" }
   ]
 }
