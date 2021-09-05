@@ -1,7 +1,7 @@
 {
   "name": "@mfcsafe/crud",
   "description": "NestJs CRUD for RESTful APIs",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "license": "MIT",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
@@ -39,8 +39,8 @@
     "build": "npx tsc -b"
   },
   "dependencies": {
-    "@mfcsafe/crud-request": "^0.0.6",
-    "@mfcsafe/util": "^0.0.6",
+    "@mfcsafe/crud-request": "^0.0.7",
+    "@mfcsafe/util": "^0.0.7",
     "deepmerge": "^3.2.0"
   },
   "peerDependencies": {
