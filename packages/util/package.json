@@ -1,7 +1,7 @@
 {
   "name": "@mfc/util",
   "description": "NestJs CRUD for RESTful APIs - util",
-  "version": "4.6.3",
+  "version": "4.6.4",
   "license": "MIT",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
@@ -30,11 +30,11 @@
     "crud-generator"
   ],
   "author": {
-    "name": "Michael Yali",
-    "email": "mihon4ik@gmail.com"
+    "name": "Daniil Belov",
+    "email": "daniilbelov98@yandex.ru"
   },
   "scripts": {
     "build": "npx tsc -b"
   },
-  "gitHead": "b406b9fdd25113aa061731f5c5143c3df10d6148"
+  "gitHead": "736e170cbc3b2bdedd4c4bd1384a74eacc82e96d"
 }
