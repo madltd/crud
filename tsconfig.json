@@ -26,9 +26,9 @@
     }
   },
   "references": [
-    { "path": "crud" },
-    { "path": "crud-request" },
-    { "path": "crud-mongoose" },
-    { "path": "util" }
+    { "path": "packages/crud" },
+    { "path": "packages/crud-request" },
+    { "path": "packages/crud-mongoose" },
+    { "path": "packages/util" }
   ]
 }
