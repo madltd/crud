@@ -1,7 +1,7 @@
 {
   "name": "@mfc/crud",
   "description": "NestJs CRUD for RESTful APIs",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "license": "MIT",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
@@ -39,13 +39,13 @@
     "build": "npx tsc -b"
   },
   "dependencies": {
-    "@mfc/crud-request": "^0.0.1",
-    "@mfc/util": "^0.0.1",
+    "@mfc/crud-request": "^1.0.0",
+    "@mfc/util": "^1.0.0",
     "deepmerge": "^3.2.0"
   },
   "peerDependencies": {
     "class-transformer": "*",
     "class-validator": "*"
   },
-  "gitHead": "9c24c9b6aef663df494800296f5010ce37a11309"
+  "gitHead": "2730ebae5af2dee1aac47ce07cdf27377c25f096"
 }
