@@ -1,7 +1,7 @@
 {
   "name": "@mfc/crud-mongoose",
   "description": "NestJs CRUD for RESTful APIs - Mongoose",
-  "version": "1.0.1",
+  "version": "0.0.1",
   "license": "MIT",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
@@ -48,5 +48,5 @@
     "@mfc/crud": "^4.3.3",
     "@mfc/crud-request": "^4.3.3"
   },
-  "gitHead": "0beca353b82cbe4609ec64b60bf9f227815ca928"
+  "gitHead": "ad2bda050148ab0112901fe6200599af4e5d6503"
 }
