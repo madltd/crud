@@ -1,5 +1,5 @@
 {
-  "name": "@mfcsafe/crud",
+  "name": "@nestjsx/crud",
   "version": "1.0.1",
   "description": "Nest CRUD for RESTful APIs",
   "license": "MIT",
@@ -107,7 +107,7 @@
     "validate-commit-msg": "2.14.0"
   },
   "devDependencies": {
-    "@types/mongoose": "^5.11.96"
+    "@types/mongoose": "^5.11.97"
   },
   "author": {
     "name": "Michael Yali",
