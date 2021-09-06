@@ -180,7 +180,9 @@ export class MongooseCrudService<T extends Document> extends CrudService<T> {
         options: CrudRequestOptions,
     ): boolean {
         return (
-            (Number.isFinite(parsed.page) || Number.isFinite(parsed.offset)) && !!this.getTake(parsed, options.query)
+            options.query.alwaysPaginate ||
+            (Number.isFinite(parsed.page) || Number.isFinite(parsed.offset)) &&
+            !!this.getTake(parsed, options.query)
         );
     }
 

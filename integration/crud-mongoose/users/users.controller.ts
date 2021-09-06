@@ -7,14 +7,10 @@ import { UsersService } from './users.service';
   model: {
     type: User,
   },
-  serialize: {
-    get: false,
-    getMany: false,
-    createMany: false,
-    create: false,
-    update: false,
-    replace: false,
-    delete: false
+  query: {
+    limit: 10,
+    maxLimit: 100,
+    alwaysPaginate: true
   }
 })
 @Controller('users')

@@ -53,12 +53,19 @@ export class CrudResponseInterceptor extends CrudBaseInterceptor
       ? classToPlain(data)
       : classToPlain(classToPlainFromExist(data, new dto()));
   }
+  protected mongooseTransform(val: any) {
+    if (isFunction(val.toObject)) return val.toObject({ getters: true });
 
-  protected serialize(context: ExecutionContext, data: any): any {
+    return val;
+  }
+
+  protected serialize(context: ExecutionContext, val: any): any {
     const { crudOptions, action } = this.getCrudInfo(context);
     const { serialize } = crudOptions;
     const dto = serialize[actionToDtoNameMap[action]];
-    const isArray = Array.isArray(data);
+    const isArray = Array.isArray(val);
+
+    const data = isArray ? val.map(this.mongooseTransform.bind(this)) : { ...val, data: val.data.map(this.mongooseTransform.bind(this)) };
 
     switch (action) {
       case CrudActions.ReadAll:
