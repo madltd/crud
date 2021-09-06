@@ -35,7 +35,7 @@ import { MONGOOSE_OPERATOR_MAP } from './mongoose-operator-map';
  */
 // tslint:disable-next-line:no-var-requires
 const mongoose = require('mongoose');
-mongoose.ObjectId.get((v) => (v ? v.toString() : null));
+// mongoose.ObjectId.get((v) => (v ? v.toString() : null));
 
 export class MongooseCrudService<T extends Document> extends CrudService<T> {
     protected entityColumns: string[] = [];

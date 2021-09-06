@@ -8,10 +8,8 @@ export const userSchema: Schema = new Schema<User>({
   title: String,
   age: Number
 }, {
-  timestamps: true,
-  toJSON: {
-    virtuals: true,
-  },
+  // _id: false,
+  timestamps: true
 });
 
 userSchema.virtual('posts', {
