@@ -7,6 +7,13 @@ import { UsersService } from './users.service';
   model: {
     type: User,
   },
+  params: {
+    id: {
+        field: 'id',
+        type: 'string',
+        primary: true
+    }
+},
   query: {
     limit: 10,
     maxLimit: 100,
