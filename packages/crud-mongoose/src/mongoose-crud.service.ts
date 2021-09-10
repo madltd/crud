@@ -294,9 +294,17 @@ export class MongooseCrudService<T extends Document> extends CrudService<T> {
     }
 
     protected async getOneOrFail({ parsed, options }: CrudRequest): Promise<T> {
-        const { builder } = await this.createBuilder(this.findOne, parsed, options);
+        const paramsFilters = this.getParamFilters(parsed);
 
-        const found = await builder;
+        let found: EnforceDocument<T, {}>;
+
+        if (paramsFilters.id) {
+            found = await this.findById(paramsFilters.id);
+        } else {
+            const { builder } = await this.createBuilder(this.findOne, parsed, options);
+    
+            found = await builder;
+        }
 
         if (!found) this.throwNotFoundException(this.alias);
 
