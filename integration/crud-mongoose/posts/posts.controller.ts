@@ -1,5 +1,5 @@
 import { Controller } from '@nestjs/common';
-import { Crud, CrudController } from '@mfcsafe/crud';
+import { Crud, CrudController } from '@mfcdev/crud';
 import { Post } from './post.entity';
 import { PostsService } from './posts.service';
 

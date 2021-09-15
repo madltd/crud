@@ -4,7 +4,7 @@ import {
   Injectable,
   NestInterceptor,
 } from '@nestjs/common';
-import { isFalse, isFunction, isObject } from '@mfcsafe/util';
+import { isFalse, isFunction, isObject } from '@mfcdev/util';
 import { classToPlain, classToPlainFromExist } from 'class-transformer';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';

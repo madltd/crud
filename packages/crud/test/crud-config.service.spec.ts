@@ -1,4 +1,4 @@
-import { RequestQueryBuilder } from '@mfcsafe/crud-request';
+import { RequestQueryBuilder } from '@mfcdev/crud-request';
 import { CrudGlobalConfig } from '../src/interfaces';
 import { CrudConfigService } from '../src/module/crud-config.service';
 

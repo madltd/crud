@@ -1,5 +1,5 @@
-import { RequestQueryBuilder } from '@mfcsafe/crud-request';
-import { isObjectFull } from '@mfcsafe/util';
+import { RequestQueryBuilder } from '@mfcdev/crud-request';
+import { isObjectFull } from '@mfcdev/util';
 import * as deepmerge from 'deepmerge';
 
 import { CrudGlobalConfig } from '../interfaces';

@@ -1,5 +1,5 @@
-import { SCondition } from '@mfcsafe/crud-request/lib/types/request-query.types';
-import { ObjectLiteral } from '@mfcsafe/util';
+import { SCondition } from '@mfcdev/crud-request/lib/types/request-query.types';
+import { ObjectLiteral } from '@mfcdev/util';
 
 export interface AuthGlobalOptions {
   property?: string;

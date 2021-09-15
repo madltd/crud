@@ -6,14 +6,14 @@ import {
     GetManyDefaultResponse,
     JoinOptions,
     QueryOptions,
-} from '@mfcsafe/crud';
+} from '@mfcdev/crud';
 import {
     ParsedRequestParams,
     QueryFields,
     QueryFilter,
     QueryJoin,
     QuerySort,
-} from '@mfcsafe/crud-request';
+} from '@mfcdev/crud-request';
 import {
     DeepPartial,
     hasLength,
@@ -23,7 +23,7 @@ import {
     isObjectFull,
     isUndefined,
     objKeys,
-} from '@mfcsafe/util';
+} from '@mfcdev/util';
 import { ObjectId } from 'mongodb';
 import { Document, Query, Model, Schema, EnforceDocument, FilterQuery } from 'mongoose';
 

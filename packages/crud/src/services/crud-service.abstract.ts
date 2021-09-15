@@ -3,8 +3,8 @@ import {
   InternalServerErrorException,
   NotFoundException,
 } from '@nestjs/common';
-import { ParsedRequestParams } from '@mfcsafe/crud-request';
-import { objKeys } from '@mfcsafe/util';
+import { ParsedRequestParams } from '@mfcdev/crud-request';
+import { objKeys } from '@mfcdev/util';
 
 import {
   CreateManyDto,

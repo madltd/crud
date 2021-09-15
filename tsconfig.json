@@ -15,14 +15,14 @@
     "composite": true,
     "baseUrl": "./packages",
     "paths": {
-      "@mfcsafe/crud": ["crud/src"],
-      "@mfcsafe/crud-request": ["crud-request/src"],
-      "@mfcsafe/crud-mongoose": ["crud-mongoose/src"],
-      "@mfcsafe/util": ["util/src"],
-      "@mfcsafe/crud/*": ["crud/src/*"],
-      "@mfcsafe/crud-request/*": ["crud-request/src/*"],
-      "@mfcsafe/util/*": ["util/src/*"],
-      "@mfcsafe/crud-mongoose/*": ["crud-mongoose/src/*"]
+      "@mfcdev/crud": ["crud/src"],
+      "@mfcdev/crud-request": ["crud-request/src"],
+      "@mfcdev/crud-mongoose": ["crud-mongoose/src"],
+      "@mfcdev/util": ["util/src"],
+      "@mfcdev/crud/*": ["crud/src/*"],
+      "@mfcdev/crud-request/*": ["crud-request/src/*"],
+      "@mfcdev/util/*": ["util/src/*"],
+      "@mfcdev/crud-mongoose/*": ["crud-mongoose/src/*"]
     }
   },
   "references": [

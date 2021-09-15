@@ -8,7 +8,7 @@ import {
   ROUTE_ARGS_METADATA,
 } from '@nestjs/common/constants';
 import { ArgumentsHost } from '@nestjs/common';
-import { isFunction } from '@mfcsafe/util';
+import { isFunction } from '@mfcdev/util';
 
 import { BaseRoute, MergedCrudOptions, AuthOptions } from '../interfaces';
 import { BaseRouteName } from '../types';

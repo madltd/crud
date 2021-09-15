@@ -1,5 +1,5 @@
 {
-  "name": "@mfcsafe/util",
+  "name": "@mfcdev/util",
   "description": "NestJs CRUD for RESTful APIs - util",
   "version": "0.0.11",
   "license": "MIT",

@@ -10,7 +10,7 @@ import {
   isStringFull,
   ObjectLiteral,
   objKeys,
-} from '@mfcsafe/util';
+} from '@mfcdev/util';
 
 import { RequestQueryException } from './exceptions';
 import {

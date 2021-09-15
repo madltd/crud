@@ -1,7 +1,7 @@
 import { ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
-import { CrudConfigService } from '@mfcsafe/crud';
+import { CrudConfigService } from '@mfcdev/crud';
 import { HttpExceptionFilter } from '../shared/https-exception.filter';
 import { AppModule } from './app.module';
 import { USER_REQUEST_KEY } from './constants';
@@ -24,8 +24,8 @@ async function bootstrap() {
   app.useGlobalFilters(new HttpExceptionFilter());
 
   const options = new DocumentBuilder()
-    .setTitle('@mfcsafe/crud-typeorm')
-    .setDescription('@mfcsafe/crud-typeorm')
+    .setTitle('@mfcdev/crud-typeorm')
+    .setDescription('@mfcdev/crud-typeorm')
     .setVersion('1.0')
     .build();
   const document = SwaggerModule.createDocument(app, options);

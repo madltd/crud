@@ -1,5 +1,5 @@
 {
-  "name": "@mfc/crud",
+  "name": "@mfcdev/crud",
   "version": "1.0.1",
   "description": "Nest CRUD for RESTful APIs",
   "license": "MIT",

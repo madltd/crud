@@ -5,7 +5,7 @@ import {
   isArrayFull,
   isNil,
   isUndefined,
-} from '@mfcsafe/util';
+} from '@mfcdev/util';
 import { stringify } from 'qs';
 
 import { RequestQueryBuilderOptions, CreateQueryParams } from './interfaces';

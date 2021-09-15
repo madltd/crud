@@ -1,5 +1,5 @@
 import { ValidationPipe } from '@nestjs/common';
-import { isFalse, isNil } from '@mfcsafe/util';
+import { isFalse, isNil } from '@mfcdev/util';
 
 import { CrudValidationGroups } from '../enums';
 import { CreateManyDto, CrudOptions, MergedCrudOptions } from '../interfaces';

@@ -14,8 +14,8 @@ import {
   RequestQueryException,
   RequestQueryParser,
   SCondition,
-} from '@mfcsafe/crud-request';
-import { hasLength, isArrayFull, isFunction, isNil, isObjectFull } from '@mfcsafe/util';
+} from '@mfcdev/crud-request';
+import { hasLength, isArrayFull, isFunction, isNil, isObjectFull } from '@mfcdev/util';
 
 import { PARSED_CRUD_REQUEST_KEY } from '../constants';
 import { CrudActions } from '../enums';

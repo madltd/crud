@@ -1,6 +1,6 @@
 import { HttpStatus } from '@nestjs/common';
-import { objKeys, isString, isFunction } from '@mfcsafe/util';
-import { RequestQueryBuilder } from '@mfcsafe/crud-request';
+import { objKeys, isString, isFunction } from '@mfcdev/util';
+import { RequestQueryBuilder } from '@mfcdev/crud-request';
 
 import { safeRequire } from '../util';
 import { R } from './reflection.helper';

@@ -1,4 +1,4 @@
-import { ObjectLiteral } from '@mfcsafe/util';
+import { ObjectLiteral } from '@mfcdev/util';
 import { QueryFields, QueryFilter, QueryJoin, QuerySort, SCondition } from '../types';
 
 export interface ParsedRequestParams {

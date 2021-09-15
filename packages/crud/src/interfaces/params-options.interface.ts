@@ -1,5 +1,5 @@
 import { SwaggerEnumType } from '@nestjs/swagger/dist/types/swagger-enum.type';
-import { ParamOptionType } from '@mfcsafe/crud-request';
+import { ParamOptionType } from '@mfcdev/crud-request';
 
 export interface ParamsOptions {
   [key: string]: ParamOption;
